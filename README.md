@@ -36,7 +36,7 @@ sso_registration_scopes = ...
 
 ### SSH Key
 
-* (Add your SSH key pair)[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html ] to your AWS account 
+* [Add your SSH key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html) to your AWS account 
 * For encrypted private key, load decrypted key for set period for Terraform `remote-exec` provisioner:
 ```commandline
 ssh-add -t 1h ~/.ssh/id_rsa
@@ -44,7 +44,7 @@ ssh-add -t 1h ~/.ssh/id_rsa
 
 ### Tailscale
 
-* Create (Tailscale account)[https://login.tailscale.com/start] and [generate auth key](https://tailscale.com/kb/1085/auth-keys)
+* Create [Tailscale account](https://login.tailscale.com/start) and [generate auth key](https://tailscale.com/kb/1085/auth-keys)
 * Export auth key as local environment variable
 ```commandline
 export TF_VAR_tailscale_auth_key=tskey-auth...

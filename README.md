@@ -6,14 +6,13 @@ MAAWS is a modular, infrastructure-as-code framework to provision a malware anal
 
 * Install Terraform
 * Install AWS CLI
-* Submit "Simulated Event" Form and receive authorization to conduct malware analysis in AWS
-  * https://support.console.aws.amazon.com/support/contacts#/simulated-events
+* Submit [Simulated Event Form](https://support.console.aws.amazon.com/support/contacts#/simulated-events) and receive authorization to conduct malware analysis in AWS
 
 ### AWS Credentials
 
 #### SSO
 
-* Follow AWS documentation: https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html
+* Follow AWS [documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-sso.html)
 * To create local profile:`aws configure sso`
 * If profile already created:
 ```commandline
@@ -37,8 +36,7 @@ sso_registration_scopes = ...
 
 ### SSH Key
 
-* Add your SSH key pair to your AWS account
-  * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html 
+* (Add your SSH key pair)[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html ] to your AWS account 
 * For encrypted private key, load decrypted key for set period for Terraform `remote-exec` provisioner:
 ```commandline
 ssh-add -t 1h ~/.ssh/id_rsa
@@ -46,15 +44,12 @@ ssh-add -t 1h ~/.ssh/id_rsa
 
 ### Tailscale
 
-* Create Tailscale account and generate auth key
-  * https://login.tailscale.com/start
-  * https://tailscale.com/kb/1085/auth-keys
+* Create (Tailscale account)[https://login.tailscale.com/start] and [generate auth key](https://tailscale.com/kb/1085/auth-keys)
 * Export auth key as local environment variable
 ```commandline
 export TF_VAR_tailscale_auth_key=tskey-auth...
 ```
-* Install and authenticate Tailscale client
-  * https://tailscale.com/download
+* Install and authenticate [Tailscale client](https://tailscale.com/download)
 * In Tailscale portal:
   * Replace ACLs in ACL tab with contents of `tailscale_acl.template` file (update <tailscale_user_email>)
   * Apply `client` tag to your machine in Machines tab

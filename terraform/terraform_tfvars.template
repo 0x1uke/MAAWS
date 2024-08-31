@@ -1,0 +1,6 @@
+profile     = ""
+region      = ""
+az          = ""
+key_pair    = ""
+flarevm_ami = ""
+remnux_ami  = ""

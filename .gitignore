@@ -1,0 +1,12 @@
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform*
+*.tfvars
+*.tfvars.json
+.terraform.tfstate.lock.info
+.idea
+.vscode
+.history
+*.vsix
+**/.DS_Store

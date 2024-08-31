@@ -1,0 +1,37 @@
+// Example ACLs for MAAWS lab
+{
+	"randomizeClientPort": true,
+
+	// Define the tags which can be applied to devices and by which users.
+	// "tagOwners": {
+	//  	"tag:example": ["autogroup:admin"],
+	// },
+	"tagOwners": {
+		"tag:client": ["<tailscale_user_email>"],
+		"tag:lab":    ["<tailscale_user_email>"],
+	},
+
+	// Define access control lists for users, groups, autogroups, tags,
+	// Tailscale IP addresses, and subnet ranges.
+	"acls": [
+		// Allow all connections.
+		// Comment this section out if you want to define specific restrictions.
+
+		// Restrict exit node from access to other nodes
+		{"action": "accept", "src": ["tag:client"], "dst": ["*:*"]},
+
+	],
+
+	// Define users and devices that can use Tailscale SSH.
+	"ssh": [
+		// Allow all users to SSH into their own devices in check mode.
+		// Comment this section out if you want to define specific restrictions.
+		{
+			"action": "accept",
+			"src":    ["tag:client"],
+			"dst":    ["tag:lab"],
+			"users":  ["autogroup:nonroot"],
+		},
+
+	],
+}

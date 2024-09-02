@@ -5,3 +5,4 @@
 * Provision Tailscale ACL with Terraform
 * Potentially split Tailscale router EC2 instance into separate Terraform module
 * Automate deletion of limited, inbound SSH rule in public security group
+* Add screenshots to README.md
